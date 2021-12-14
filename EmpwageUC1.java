@@ -1,15 +1,41 @@
-public class EmpWageBuilderUC1 {
- 
-  public static void main(String[] args) {
+package EmpWageoops;
+
+import java.util.Scanner;
+
+public class EmpwageUC1{ 
+
+
+	static int present=0;
+	static int abcent =0;
+	static int days;
+	static String name;
 	
-	int IS_FULL_TIME = 1;
 
-	double empCheck = Math.floor(Math.random() * 10) % 2;
+public static void main(String[] args)
+{
+	
+    Scanner sc=new Scanner(System.in);
+    System.out.print("Enter the employee name :");  
+    name=sc.next();
+    
+    System.out.print("Enter the days :");  
+    days=sc.nextInt();
+    
 
-	if (empCheck == IS_FULL_TIME)
-		System.out.println("Employee is Present");
-	else
-		System.out.println("Employee is Absent");
+	for (int i = 0; i <= days; i++) {
+		double rand = Math.floor(Math.random() * 10 % 2);
+		if (rand == 1) 
+		{
+			present ++;
+		} else if (rand == 0) 
+		{
+			abcent ++;
+		} else {
+			break;
+		}
+	}
+	System.out.println("Employee is present days for " + present);
+	System.out.println("Employee is abscent days for " + abcent);
 }
-
+	
 }
